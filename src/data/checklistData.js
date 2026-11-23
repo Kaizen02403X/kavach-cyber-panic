@@ -1,0 +1,359 @@
+export const CHECKLIST_DATA = {
+  upi_fraud: {
+    steps: [
+      {
+        id: "call_1930",
+        urgency: "critical",
+        title_en: "Call Cyber Helpline 1930 Right Now",
+        title_hi: "तुरंत साइबर हेल्पलाइन 1930 पर कॉल करें",
+        desc_en: "Dial 1930 immediately. Tell the officer you suffered an unauthorized UPI debit. Keep your Bank Name, Account Number, and UTR / Transaction ID ready.",
+        desc_hi: "तुरंत 1930 डायल करें। अधिकारी को बताएं कि आपके UPI से अनधिकृत पैसे कटे हैं। अपना बैंक नाम, खाता नंबर और UTR / ट्रांजेक्शन ID तैयार रखें।",
+        why_en: "The 1930 portal connects directly to the Indian banking gateway (CFCFRMS) and can freeze the scammer's bank account before they withdraw cash.",
+        why_hi: "1930 पोर्टल सीधे भारतीय बैंकिंग गेटवे (CFCFRMS) से जुड़ा है और ठग के खाते से नकदी निकालने से पहले उस पैसे को रोक (freeze) सकता है।",
+        actionType: "call",
+        actionTarget: "1930",
+        actionLabel_en: "Call 1930 Now",
+        actionLabel_hi: "अभी 1930 कॉल करें"
+      },
+      {
+        id: "call_bank",
+        urgency: "high",
+        title_en: "Notify Your Bank & Freeze UPI / NetBanking",
+        title_hi: "अपने बैंक को सूचित करें और UPI/नेटबैंकिंग ब्लॉक करें",
+        desc_en: "Call your bank's 24x7 fraud desk. Request an immediate temporary block on your UPI ID and outgoing transfers to prevent further loss.",
+        desc_hi: "अपने बैंक के 24x7 फ्रॉड डेस्क पर कॉल करें। आगे के नुकसान से बचने के लिए अपने UPI ID और निकासी पर अस्थायी रोक लगाने को कहें।",
+        why_en: "Under RBI guidelines, reporting an unauthorized electronic transfer within 3 days ensures maximum customer liability protection.",
+        why_hi: "RBI के नियमों के अनुसार 3 दिनों के भीतर अनधिकृत लेनदेन की सूचना देने पर ग्राहक को शून्य/न्यूनतम देयता का सुरक्षा कवच मिलता है।",
+        actionType: "bank_modal",
+        actionLabel_en: "View Bank Helplines",
+        actionLabel_hi: "बैंक हेल्पलाइन देखें"
+      },
+      {
+        id: "report_payment_app",
+        urgency: "high",
+        title_en: "Raise Fraud Dispute inside GPay / PhonePe / Paytm",
+        title_hi: "GPay / PhonePe / Paytm में फ्रॉड डिस्प्यूट दर्ज करें",
+        desc_en: "Open the transaction history in your UPI app, tap 'Report Fraud' or 'Having issue with transaction', and flag it as unauthorized scam.",
+        desc_hi: "पेमेंट ऐप में ट्रांजेक्शन हिस्ट्री खोलें, 'Report Fraud' या 'समस्या दर्ज करें' पर टैप करके इसे अनधिकृत धोखाधड़ी चिह्नित करें।",
+        why_en: "Payment apps flag the recipient's VPA / merchant account instantly across the NPCI network, preventing them from duping others.",
+        why_hi: "पेमेंट ऐप्स ठग के UPI पते को NPCI नेटवर्क पर फ्लैग कर देते हैं ताकि वह अन्य लोगों से ठगी न कर सके।",
+        actionType: "guide",
+        actionLabel_en: "How to dispute in app",
+        actionLabel_hi: "ऐप में शिकायत कैसे करें"
+      },
+      {
+        id: "save_evidence",
+        urgency: "medium",
+        title_en: "Take Screenshots of UTR, QR Code & Scammer Chat",
+        title_hi: "UTR, QR कोड और चैट के स्क्रीनशॉट सुरक्षित रखें",
+        desc_en: "Do not delete any WhatsApp chats, SMS, call logs, or QR codes. Take full screenshots showing timestamps and 12-digit UTR numbers.",
+        desc_hi: "कोई भी चैट, SMS या कॉल रिकॉर्ड डिलीट न करें। समय और 12-अंकों वाले UTR नंबर साफ दिखने वाले स्क्रीनशॉट ले लें।",
+        why_en: "Police and banks require original digital proof and 12-digit UTR numbers to register FIR and process chargebacks.",
+        why_hi: "पुलिस FIR दर्ज करने और बैंक क्लेम प्रोसेस करने के लिए 12-अंकों का UTR नंबर और डिजिटल सबूत अनिवार्य होते हैं।",
+        actionType: "evidence_tab",
+        actionLabel_en: "Fill Evidence Vault",
+        actionLabel_hi: "सबूत दर्ज करें"
+      },
+      {
+        id: "check_call_forward",
+        urgency: "medium",
+        title_en: "Check if Call Forwarding Was Activated (*#21#)",
+        title_hi: "जांचें कि कॉल फॉरवर्डिंग तो चालू नहीं हुई (*#21#)",
+        desc_en: "Scammers often trick users into dialling *401* to forward OTPs to their numbers. Dial *#21# to verify that call forwarding is disabled.",
+        desc_hi: "ठग अक्सर OTP चुराने के लिए *401* कोड डायल करवा देते हैं। डायलर में *#21# मिलाकर चेक करें कि कॉल डाइवर्ट तो नहीं है।",
+        why_en: "If call forwarding is on, the scammer receives your bank OTPs silently on their phone without your knowledge.",
+        why_hi: "अगर फॉरवर्डिंग चालू है, तो आपके बैंक के OTP सीधे ठग के पास पहुंच जाते हैं और आपको पता भी नहीं चलता।",
+        actionType: "ussd",
+        actionTarget: "*#21#",
+        actionLabel_en: "Dial *#21# (Check Forwarding)",
+        actionLabel_hi: "*#21# डायल करें (जांचें)"
+      },
+      {
+        id: "file_cybercrime",
+        urgency: "medium",
+        title_en: "File Formal Report on cybercrime.gov.in",
+        title_hi: "cybercrime.gov.in पर आधिकारिक शिकायत दर्ज करें",
+        desc_en: "Submit the pre-filled complaint generated by Kavach on the National Cyber Crime Reporting Portal to obtain a formal Acknowledgement Number.",
+        desc_hi: "कवच द्वारा तैयार ड्राफ्ट का उपयोग करके राष्ट्रीय साइबर क्राइम पोर्टल पर शिकायत दर्ज करें और पावती संख्या (Ack No.) प्राप्त करें।",
+        why_en: "Banks require the official cybercrime Acknowledgement slip to issue legal reversals and freeze suspect accounts permanently.",
+        why_hi: "बैंक पैसे वापस दिलाने और ठग का खाता स्थायी सील करने के लिए आधिकारिक साइबर पोर्टल की पावती पर्ची मांगते हैं।",
+        actionType: "url",
+        actionTarget: "https://cybercrime.gov.in",
+        actionLabel_en: "Open Cyber Crime Portal",
+        actionLabel_hi: "पोर्टल खोलें"
+      }
+    ]
+  },
+
+  shared_otp: {
+    steps: [
+      {
+        id: "block_card_netbanking",
+        urgency: "critical",
+        title_en: "Immediately Block Card & NetBanking Access",
+        title_hi: "तुरंत डेबिट/क्रेडिट कार्ड व नेटबैंकिंग ब्लॉक करें",
+        desc_en: "Use your bank's mobile app or send an emergency SMS to block your card immediately. Change your NetBanking login password from another device.",
+        desc_hi: "बैंक ऐप या SMS के जरिए अपने कार्ड को तुरंत ब्लॉक करें। यदि नेटबैंकिंग पासवर्ड साझा किया है तो तुरंत नया पासवर्ड बनाएं।",
+        why_en: "Once a scammer has your OTP or CVV, they attempt multiple transactions within minutes until your daily limit is hit.",
+        why_hi: "OTP या कार्ड डिटेल मिलते ही ठग कुछ ही मिनटों में बार-बार लेन-देन करके खाता खाली करने की कोशिश करते हैं।",
+        actionType: "bank_modal",
+        actionLabel_en: "View SMS Block Codes",
+        actionLabel_hi: "SMS ब्लॉक कोड देखें"
+      },
+      {
+        id: "call_bank_fraud",
+        urgency: "critical",
+        title_en: "Call Bank Fraud Desk & Request Debit Freeze",
+        title_hi: "बैंक फ्रॉड डेस्क को कॉल करके डेबिट फ्रीज करवाएं",
+        desc_en: "Call your bank customer care right now. Clearly state: 'I suspect unauthorized access, please place a total debit hold on my account'.",
+        desc_hi: "बैंक कस्टमर केयर को तुरंत कॉल करके कहें: 'मेरे खाते से धोखाधड़ी का खतरा है, कृपया मेरे खाते पर डेबिट फ्रीज (पैसे निकासी पर रोक) लगाएं'।",
+        why_en: "A debit freeze prevents any funds from leaving your account even if the scammer has your credentials.",
+        why_hi: "डेबिट फ्रीज होने के बाद यदि ठग के पास आपका पासवर्ड भी होगा, तो भी वह आपके खाते से पैसे नहीं निकाल पाएगा।",
+        actionType: "bank_modal",
+        actionLabel_en: "Call Your Bank",
+        actionLabel_hi: "बैंक को कॉल करें"
+      },
+      {
+        id: "disable_call_forward",
+        urgency: "high",
+        title_en: "Disable Call & SMS Forwarding (Dial ##002#)",
+        title_hi: "कॉल फॉरवर्डिंग पूर्णतः बंद करें (##002# डायल करें)",
+        desc_en: "Scammers often activate call forwarding secretly via social engineering. Dial ##002# to cancel all forwardings immediately.",
+        desc_hi: "ठग अक्सर छल से कॉल डाइवर्ट करवा लेते हैं। अपने फोन डायलर में ##002# डायल करें, इससे सभी फॉरवर्डिंग रद्द हो जाएंगी।",
+        why_en: "Dialling ##002# is an official universal GSM code that clears all conditional and unconditional forwarding.",
+        why_hi: "##002# एक मानक GSM कोड है जो हर तरह की छिपी हुई कॉल/SMS फॉरवर्डिंग को एक साथ हटा देता है।",
+        actionType: "ussd",
+        actionTarget: "##002#",
+        actionLabel_en: "Dial ##002# (Erase Forwarding)",
+        actionLabel_hi: "##002# डायल करें (फॉरवर्डिंग हटाएं)"
+      },
+      {
+        id: "change_upi_mpin",
+        urgency: "high",
+        title_en: "Reset UPI MPIN on GPay / PhonePe / BHIM",
+        title_hi: "GPay / PhonePe पर नया UPI MPIN बनाएं",
+        desc_en: "Open your UPI app, go to Bank Accounts -> Reset UPI PIN using your Debit Card or Aadhaar OTP.",
+        desc_hi: "पेमेंट ऐप खोलें, बैंक खाते में जाएं और 'Reset UPI PIN' चुनकर नया गुप्त पिन बनाएं।",
+        why_en: "Resetting your MPIN invalidates any compromised sessions or unauthorized linked virtual payment devices.",
+        why_hi: "नया MPIN बनाने से पुराने सभी संदेहास्पद डिवाइस और सेशन तुरंत अमान्य हो जाते हैं।",
+        actionType: "guide",
+        actionLabel_en: "How to reset MPIN",
+        actionLabel_hi: "MPIN बदलने का तरीका"
+      },
+      {
+        id: "call_1930",
+        urgency: "medium",
+        title_en: "Report Incident to Cyber Helpline 1930",
+        title_hi: "साइबर हेल्पलाइन 1930 पर सूचना दर्ज कराएं",
+        desc_en: "Even if no money was lost yet, reporting the scammer's phone number and fake bank profile helps authorities blacklist the criminal.",
+        desc_hi: "भले ही पैसे न कटे हों, ठग के नंबर और फर्जी बैंक पहचान की रिपोर्ट 1930 पर करें ताकि उनका नंबर ब्लॉक किया जा सके।",
+        why_en: "Proactive reporting protects your credit record and establishes evidence that you acted in good faith.",
+        why_hi: "समय पर सूचना देने से भविष्य में किसी विवाद की स्थिति में आपका पक्ष मजबूत रहता है।",
+        actionType: "call",
+        actionTarget: "1930",
+        actionLabel_en: "Call 1930",
+        actionLabel_hi: "1930 पर कॉल करें"
+      }
+    ]
+  },
+
+  shady_apk: {
+    steps: [
+      {
+        id: "turn_off_internet",
+        urgency: "critical",
+        title_en: "Turn ON Airplane Mode & Turn OFF Wi-Fi Right Now",
+        title_hi: "तुरंत हवाई मोड (Airplane Mode) चालू करें और Wi-Fi बंद करें",
+        desc_en: "Swipe down your phone's notification shade right this second and tap Airplane Mode. Ensure both Mobile Data and Wi-Fi are totally disconnected.",
+        desc_hi: "बिना एक पल गंवाए फोन का नोटिफिकेशन पैनल नीचे खींचें और 'हवाई मोड' (Airplane Mode) चालू करें। Wi-Fi भी बंद रखें।",
+        why_en: "Rogue APKs and screen-sharing apps (AnyDesk, QuickSupport) require an active internet connection to stream your screen and steal OTPs.",
+        why_hi: "फर्जी ऐप्स और स्क्रीन-शेयरिंग टूल्स (AnyDesk आदि) को आपका फोन नियंत्रित करने और OTP पढ़ने के लिए इंटरनेट चाहिए होता है।",
+        actionType: "device_guide",
+        actionLabel_en: "Device Safety Steps",
+        actionLabel_hi: "डिवाइस सुरक्षा निर्देश"
+      },
+      {
+        id: "freeze_bank_from_other_phone",
+        urgency: "critical",
+        title_en: "Use Another Family Member's Phone to Call Your Bank",
+        title_hi: "किसी परिजन के फोन से अपने बैंक को तुरंत कॉल करें",
+        desc_en: "Do NOT use your compromised phone to make banking calls or enter passwords. Use a family member's phone to call your bank's emergency desk.",
+        desc_hi: "अपने संक्रमित फोन से बैंक कॉल या पासवर्ड न डालें। परिवार के किसी अन्य सदस्य के फोन से बैंक को कॉल करके खाता अस्थायी ब्लॉक कराएं।",
+        why_en: "Keyloggers or remote access trojans on your device can silently intercept keypad taps while you call.",
+        why_hi: "संक्रमित फोन में हिडन की-लॉगर हो सकता है जो आपके डायल किए गए नंबर और पासवर्ड रिकॉर्ड कर सकता है।",
+        actionType: "bank_modal",
+        actionLabel_en: "View Bank Numbers",
+        actionLabel_hi: "बैंक नंबर देखें"
+      },
+      {
+        id: "uninstall_apk_safemode",
+        urgency: "high",
+        title_en: "Revoke Accessibility & Uninstall the Rogue App",
+        title_hi: "एक्सेसिबिलिटी परमिशन हटाएं और ऐप अनइंस्टॉल करें",
+        desc_en: "Go to Settings -> Apps. Look for recently installed apps with vague names or AnyDesk / TeamViewer. Revoke permissions and tap Uninstall.",
+        desc_hi: "फोन की सेटिंग्स -> ऐप्स (Apps) में जाएं। हाल ही में आई अनजान ऐप या AnyDesk खोजें, उसकी परमिशन बंद करें और अनइंस्टॉल करें।",
+        why_en: "Malicious APKs abuse Android's Accessibility Services to read OTP popups and auto-approve payment requests.",
+        why_hi: "खतरनाक ऐप्स एक्सेसिबिलिटी सर्विस का दुरुपयोग करके OTP पढ़ती हैं और खुद ही पेमेंट को अप्रूव कर देती हैं।",
+        actionType: "guide",
+        actionLabel_en: "Step-by-step uninstall",
+        actionLabel_hi: "अनइंस्टॉल करने का तरीका"
+      },
+      {
+        id: "check_sms_forwarder",
+        urgency: "high",
+        title_en: "Dial ##002# to Cancel Any Secret Call Divert",
+        title_hi: "छिपे हुए कॉल डायवर्जन को रद्द करें (##002# डायल करें)",
+        desc_en: "Once internet is safely handled, open your phone dialler and dial ##002# to clear any call/SMS divert codes configured by the APK.",
+        desc_hi: "फोन डायलर में ##002# डायल करें ताकि मैलवेयर द्वारा सेट किया गया कोई भी कॉल या SMS फॉरवर्डिंग कोड तुरंत हट जाए।",
+        why_en: "Many rogue APKs quietly send background USSD strings to divert your calls without your consent.",
+        why_hi: "कई फर्जी APK बैकग्राउंड में चुपके से USSD कोड चलाकर आपके कॉल और OTP अपने पास मंगवा लेते हैं।",
+        actionType: "ussd",
+        actionTarget: "##002#",
+        actionLabel_en: "Dial ##002#",
+        actionLabel_hi: "##002# डायल करें"
+      },
+      {
+        id: "factory_reset_advice",
+        urgency: "medium",
+        title_en: "Backup Photos & Factory Reset the Device",
+        title_hi: "जरूरी फोटो का बैकअप लें और फोन को फैक्ट्री रीसेट करें",
+        desc_en: "For complete peace of mind against persistent spyware, backup your personal photos and perform a clean Factory Data Reset.",
+        desc_hi: "पूरी सुरक्षा सुनिश्चित करने के लिए जरूरी फोटो का बैकअप लें और फोन को 'फैक्ट्री डेटा रीसेट' (Factory Reset) कर लें।",
+        why_en: "Advanced trojans can hide deep inside system caches and reinfect devices even after simple deletion.",
+        why_hi: "कुछ वायरस सिस्टम कैश में छिप जाते हैं और सामान्य डिलीट करने के बाद भी फोन में रह सकते हैं।",
+        actionType: "guide",
+        actionLabel_en: "Reset precautions",
+        actionLabel_hi: "रीसेट से पहले सावधानियां"
+      }
+    ]
+  },
+
+  suspicious_link: {
+    steps: [
+      {
+        id: "close_tab_clear_cookies",
+        urgency: "high",
+        title_en: "Close Browser Tab & Clear Cookies / History",
+        title_hi: "ब्राउज़र टैब तुरंत बंद करें और हिस्ट्री/कुकीज़ साफ करें",
+        desc_en: "Close the opened link tab immediately. Open Chrome or Safari settings, tap 'Clear Browsing Data' and clear cookies and site data for the last 24 hours.",
+        desc_hi: "खुले हुए लिंक को तुरंत बंद करें। ब्राउज़र सेटिंग्स में जाकर पिछले 24 घंटे का 'Clear Browsing Data' (कुकीज़ और कैश) साफ करें।",
+        why_en: "Phishing links try to capture your active session tokens or install tracking web scripts on your browser.",
+        why_hi: "फर्जी लिंक आपके ब्राउज़र के एक्टिव सेशन टोकन चुराने या जासूसी स्क्रिप्ट चलाने की कोशिश करते हैं।",
+        actionType: "guide",
+        actionLabel_en: "How to clear cookies",
+        actionLabel_hi: "कुकीज़ साफ करने का तरीका"
+      },
+      {
+        id: "change_banking_passwords",
+        urgency: "critical",
+        title_en: "Change NetBanking, UPI & Email Passwords",
+        title_hi: "नेटबैंकिंग, UPI और ईमेल का पासवर्ड तुरंत बदलें",
+        desc_en: "If you typed any username, password, or PIN on that page, immediately log in from a trusted browser and change your login and transaction passwords.",
+        desc_hi: "यदि आपने उस लिंक पर कोई पासवर्ड, पिन या जन्मतिथि भरी थी, तो तुरंत असली वेबसाइट पर जाकर नया मजबूत पासवर्ड बनाएं।",
+        why_en: "Scammers store entered inputs in real-time key capture databases even before you click the submit button.",
+        why_hi: "फर्जी पेज आपके द्वारा टाइप किए गए हर अक्षर को सबमिट दबाने से पहले ही रिकॉर्ड कर लेते हैं।",
+        actionType: "bank_modal",
+        actionLabel_en: "Bank Login Portals",
+        actionLabel_hi: "बैंक पोर्टल देखें"
+      },
+      {
+        id: "check_unknown_downloads",
+        urgency: "high",
+        title_en: "Check 'Downloads' Folder for Rogue Files",
+        title_hi: "फोन के 'Downloads' फोल्डर में अनजान फाइलें चेक करें",
+        desc_en: "Open your phone's File Manager -> Downloads. If any file ending with .apk, .exe, or .zip was downloaded today, delete it immediately without opening.",
+        desc_hi: "फोन के 'फाइल मैनेजर' में जाकर डाउनलोड्स फोल्डर देखें। यदि आज कोई अनजान .apk या .zip फाइल डाउनलोड हुई है तो उसे तुरंत डिलीट करें।",
+        why_en: "Drive-by download links quietly push stealth payload files onto your device storage.",
+        why_hi: "कुछ लिंक बैकग्राउंड में आपके फोन में चुपचाप खतरनाक फाइलें डाउनलोड कर देते हैं।",
+        actionType: "guide",
+        actionLabel_en: "Check Downloads guide",
+        actionLabel_hi: "डाउनलोड जांचने का तरीका"
+      },
+      {
+        id: "report_phishing_link",
+        urgency: "medium",
+        title_en: "Report the Phishing URL to 1930 / Cyber Portal",
+        title_hi: "फर्जी लिंक की सूचना 1930 / साइबर पोर्टल पर दें",
+        desc_en: "Copy the malicious SMS / link and report it on cybercrime.gov.in or Chakshu (Sanchar Saathi) portal so the telecom department can block the domain.",
+        desc_hi: "फर्जी SMS या लिंक को कॉपी करके संचार साथी (चक्षु) या साइबर पोर्टल पर रिपोर्ट करें ताकि यह वेबसाइट पूरे भारत में ब्लॉक हो सके।",
+        why_en: "The Indian Department of Telecommunications (DoT) rapidly disables fraud domains and terminates scammer SIM cards.",
+        why_hi: "दूरसंचार विभाग (DoT) सूचना मिलते ही ऐसे डोमेन और फर्जी सिम कार्ड तुरंत ब्लॉक कर देता है।",
+        actionType: "url",
+        actionTarget: "https://sancharsaathi.gov.in/sfc/",
+        actionLabel_en: "Report on Chakshu Portal",
+        actionLabel_hi: "चक्षु पोर्टल पर रिपोर्ट करें"
+      }
+    ]
+  },
+
+  account_hacked: {
+    steps: [
+      {
+        id: "alert_family_contacts",
+        urgency: "critical",
+        title_en: "Alert Family & WhatsApp Groups Immediately",
+        title_hi: "परिवार और दोस्तों को तुरंत कॉल करके सतर्क करें",
+        desc_en: "Scammers will immediately message your contacts posing as you, asking for urgent ₹5,000 to ₹50,000 medical or travel loans. Tell your family not to pay.",
+        desc_hi: "हैक करने के बाद ठग आपके नाम से रिश्तेदारों को 'इलाज के लिए पैसे चाहिए' जैसे मैसेज भेजते हैं। परिजनों को तुरंत बता दें कि कोई पैसे न दे।",
+        why_en: "Impersonation fraud spreads fastest in the first 30 minutes after an account hijacking.",
+        why_hi: "अकाउंट हैक होने के पहले 30 मिनट में ठग आपके रिश्तेदारों से आपातकाल के नाम पर लाखों रुपये ठग लेते हैं।",
+        actionType: "family_modal",
+        actionLabel_en: "Send Family Alert Message",
+        actionLabel_hi: "परिजनों को अलर्ट भेजें"
+      },
+      {
+        id: "re_register_whatsapp",
+        urgency: "critical",
+        title_en: "Re-register WhatsApp with your Phone Number & SMS Code",
+        title_hi: "अपने फोन नंबर से WhatsApp दोबारा लॉग इन करने की कोशिश करें",
+        desc_en: "Open WhatsApp, enter your phone number, and request the 6-digit SMS verification code. Entering this automatically logs out the hacker from other devices.",
+        desc_hi: "WhatsApp खोलें, अपना मोबाइल नंबर डालें और SMS द्वारा 6 अंकों का कोड मंगवाएं। कोड डालते ही हैकर का फोन अपने आप लॉगआउट हो जाएगा।",
+        why_en: "WhatsApp allows only one primary mobile device per phone number at any time.",
+        why_hi: "WhatsApp एक नंबर पर एक समय में केवल एक ही प्राइमरी फोन को अनुमति देता है।",
+        actionType: "guide",
+        actionLabel_en: "Recovery instructions",
+        actionLabel_hi: "लॉग इन निर्देश"
+      },
+      {
+        id: "email_whatsapp_support",
+        urgency: "high",
+        title_en: "Email WhatsApp Support to Deactivate Compromised Account",
+        title_hi: "अकाउंट बंद करवाने के लिए WhatsApp सपोर्ट को ईमेल करें",
+        desc_en: "If the scammer placed a PIN lock on your account, email support@whatsapp.com with subject: 'Lost/Stolen: Please deactivate my account' and your number with +91.",
+        desc_hi: "यदि हैकर ने 2-स्टेप पिन लगा दिया है, तो support@whatsapp.com को ईमेल भेजें: विषय 'Lost/Stolen: Please deactivate my account' और +91 सहित फोन नंबर।",
+        why_en: "WhatsApp deactivates the account within hours, stopping the scammer from messaging anyone.",
+        why_hi: "ईमेल मिलते ही WhatsApp खाते को अस्थायी रूप से डीएक्टिवेट कर देता है जिससे ठग किसी को मैसेज नहीं कर पाएगा।",
+        actionType: "email",
+        actionTarget: "mailto:support@whatsapp.com?subject=Lost/Stolen:%20Please%20deactivate%20my%20account&body=Dear%20WhatsApp%20Support,%0A%0AMy%20WhatsApp%20account%20has%20been%20compromised.%20Please%20deactivate%20my%20account%20immediately.%0A%0APhone%20number:%20+91",
+        actionLabel_en: "Email WhatsApp Support",
+        actionLabel_hi: "WhatsApp को ईमेल भेजें"
+      },
+      {
+        id: "revoke_linked_devices",
+        urgency: "high",
+        title_en: "Log Out All Linked Web & Desktop Devices",
+        title_hi: "सभी लिंक्ड वेब और कंप्यूटर डिवाइस से लॉगआउट करें",
+        desc_en: "Once you regain access, go to WhatsApp Settings -> Linked Devices. Review the list and tap 'Log Out' on every unrecognized device.",
+        desc_hi: "वापस लॉगइन होने के बाद Settings -> Linked Devices में जाएं और सभी अनजान कंप्यूटर या ब्राउज़र को 'Log Out' कर दें।",
+        why_en: "Hackers frequently maintain stealth access via WhatsApp Web even after you regain phone control.",
+        why_hi: "हैकर्स फोन से लॉगआउट होने के बाद भी कई बार कंप्यूटर वेब वर्जन के जरिए जुड़े रहते हैं।",
+        actionType: "guide",
+        actionLabel_en: "Check linked devices",
+        actionLabel_hi: "डिवाइस चेक करें"
+      },
+      {
+        id: "enable_two_step",
+        urgency: "medium",
+        title_en: "Enable 2-Step Verification with a Secret PIN",
+        title_hi: "तुरंत 6 अंकों का 2-स्टेप वेरिफिकेशन पिन चालू करें",
+        desc_en: "Go to WhatsApp Settings -> Account -> Two-step verification -> Turn on. Set a 6-digit PIN and add your personal email address for recovery.",
+        desc_hi: "WhatsApp Settings -> Account -> Two-step verification चालू करें। 6 अंकों का गुप्त पिन बनाएं और अपनी ईमेल ID जोड़ें।",
+        why_en: "With 2-step verification enabled, no one can activate your WhatsApp without knowing this secret PIN.",
+        why_hi: "2-स्टेप पिन चालू होने पर कोई भी व्यक्ति आपके गुप्त पिन के बिना WhatsApp सक्रिय नहीं कर सकता।",
+        actionType: "guide",
+        actionLabel_en: "How to setup 2-Step",
+        actionLabel_hi: "2-स्टेप पिन सेट करें"
+      }
+    ]
+  }
+};
